@@ -8,5 +8,7 @@
 n = str(input("В ведите число: "))
 count = 0
 for i in n:
+    if i == ".":
+        i = 0
     count += int(i)
 print(count)
