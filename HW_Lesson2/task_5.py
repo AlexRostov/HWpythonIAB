@@ -1,6 +1,7 @@
-# curtime = str(datetime.datetime.now())[-6:]
-import datetime
+import time
 
-randomNum = datetime.datetime.now().microsecond%10
-
-print (f'Случайное число: {(randomNum) }')
+start = int(input("Нижний предел: "))
+finish = int(input("Верхний предел: "))
+rand_nam = int((time.time() % 1) * (finish - start) + start)
+print(f"Сдучайное число в диапазоне от {start} до {finish}: {rand_nam}")
+print(time.time())
