@@ -1,12 +1,18 @@
-import math
 
-a, b, c = float(input()), float(input()), float(input())
-d = b ** 2 - 4 * (a * c)
-if d < 0:
-    print("Нет корней")
-elif d == 0:
-    print(-b / (2 * a) )
-elif d > 0:
-    x1 = (-b + math.sqrt(b ** 2 - 4 * (a * c))) / 2 * a
-    x2 = (-b - math.sqrt(b ** 2 - 4 * (a * c))) / 2 * a
-    print(min(x1, x2), max(x1, x2), sep ="\n")
+n = int(input('Введите число: '))
+
+def get_fibonacci(n):
+    fibo_nums = []
+    a, b = 1, 1
+    for i in range(n-1):
+        fibo_nums.append(a)
+        a, b = b, a + b
+    a, b = 0, 1
+    for i in range (n):
+        fibo_nums.insert(0, a)
+        a, b = b, a - b
+    return fibo_nums
+
+fibo_nums = get_fibonacci(n)
+print(get_fibonacci(n))
+print(fibo_nums.index(0))
